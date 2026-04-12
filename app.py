@@ -50,15 +50,25 @@ def website():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        user_email = request.form["email"]
-        message = request.form["message"]
+        user_email = request.form.get("email", "").strip()
+        message = request.form.get("message", "").strip()
+
+        print("EMAIL_ADDRESS =", EMAIL_ADDRESS)
+        print("user_email =", user_email)
+        print("message =", message)
+
+        if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
+            return "❌ EMAIL_ADDRESS 或 EMAIL_PASSWORD 沒有設定"
+
+        if not user_email or not message:
+            return "❌ Email 或訊息不能空白"
 
         msg = MIMEText(
-            f"Sender email: {user_email}\n\nMessage:\n{message}",
+            f"Sender: {user_email}\n\nMessage:\n{message}",
             "plain",
             "utf-8"
         )
-        msg["Subject"] = "New message from your website"
+        msg["Subject"] = "New message from website"
         msg["From"] = EMAIL_ADDRESS
         msg["To"] = EMAIL_ADDRESS
         msg["Reply-To"] = user_email
@@ -68,8 +78,9 @@ def contact():
                 server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
                 server.send_message(msg)
 
-            return redirect(url_for("home"))
+            return "✅ Email sent successfully!"
         except Exception as e:
+            print("SEND ERROR:", e)
             return f"❌ Failed to send email: {e}"
 
     return render_template("contact.html")

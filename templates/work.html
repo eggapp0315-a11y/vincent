@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What I can do</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT_ME</a>
+    <a href="/projects">PROJECTS</a>
+    <!-- 🔥 翻譯按鈕 -->
+    <div id="google_translate_element"></div>
+</div>
+
+<div class="container">
+    <h1>What I can do</h1>
+
+    <div class="card">
+        <h2>Guitar Class</h2>
+        <p>I can teach you how to play Guitar</p>
+
+        <a href="/Guitar" target="_blank" class="button">
+            🔗 View Work
+        </a>
+
+
+    </div>
+        <div class="card">
+        <h2>Website Design</h2>
+        <p>I can Design website to you </p>
+
+        <a href="/website" target="_blank" class="button">
+            🔗 View Work
+        </a>
+    </div>
+</div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko,fr,de,es,it,pt,ru,ar,th,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT ME</a>
+    <a href="/projects">PROJECTS</a>
+    <a href="/work">WORK</a>
+    <!-- 🔥 翻譯按鈕 -->
+    <div id="google_translate_element"></div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <img src="{{ url_for('static', filename='Website Design.jpg') }}" class="profile-img">
+
+        <div class="text">
+            <h1>THE WEBSITE DESIGN</h1>
+            <p>I can help you create the website you need, for example:</p>
+            <ul>
+                <li>Personal Portfolio Website</li>
+                <li>Business Website</li>
+                <li>Landing Page</li>
+                <li>Restaurant Website</li>
+                <li>Tutoring / Education Website</li>
+                <li>Service Website</li>
+                <li>Booking Information Page</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko,fr,de,es,it,pt,ru,ar,th,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

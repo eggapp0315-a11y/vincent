@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PROJECTS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT_ME</a>
+    <!-- 🔥 翻譯按鈕 -->
+    <div id="google_translate_element"></div>
+</div>
+
+<div class="container">
+    <h1>My projects</h1>
+
+    <div class="card">
+        <h2>My Dad's Website</h2>
+        <p>I built a simple website for my dad using HTML and CSS.</p>
+
+        <a href="https://teacher-teams.onrender.com" target="_blank" class="button">
+            🔗 View Project
+        </a>
+    </div>
+</div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko,fr,de,es,it,pt,ru,ar,th,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

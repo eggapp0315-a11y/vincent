@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/">HOME</a>
+    <a href="/about">ABOUT ME</a>
+    <a href="/projects">PROJECTS</a>
+    <a href="/work">WORK</a>
+    <a href="/contact">contact</a>
+    <!-- 🔥 翻譯按鈕 -->
+    <div id="google_translate_element"></div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <img src="{{ url_for('static', filename='Vincent.jpg') }}" class="profile-img">
+
+        <div class="text">
+            <h1>WELCOME TO MY WEBSITE</h1>
+            <p>I AM FRASER HIGH SCHOOL STUDENT</p>
+        </div>
+    </div>
+</div>
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko,fr,de,es,it,pt,ru,ar,th,vi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

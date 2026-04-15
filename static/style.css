@@ -1,150 +1,173 @@
-
 /* 標題 */
 h1 {
-    color: #38bdf8;
-    font-size: 40px;
+    color: #38bdf8;            /* 主標題顏色（藍色） */
+    font-size: 40px;           /* 字體大小 */
 }
 
 h2 {
-    color: #22c55e;
+    color: #22c55e;            /* 副標題顏色（綠色） */
 }
 
 /* 區塊 */
 .section {
-    padding: 60px 20px;
+    padding: 60px 20px;        /* 上下60px，左右20px間距 */
 }
 
 /* 卡片 */
 .card {
-    background: rgba(30, 41, 59, 0.8);
-    margin: 20px auto;
-    padding: 25px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(30, 41, 59, 0.8); /* 半透明深色背景 */
+    margin: 20px auto;         /* 上下20px，自動置中 */
+    padding: 25px;             /* 內距 */
+    width: 80%;                /* 寬度80% */
+    max-width: 600px;          /* 最大寬600px */
+    border-radius: 15px;       /* 圓角 */
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); /* 藍色陰影 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 動畫效果 */
 }
 
 /* 滑鼠效果 */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+    transform: translateY(-5px); /* 向上浮5px */
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6); /* 陰影變亮 */
 }
 
 /* 打字機效果 */
 .typing {
-    border-right: 3px solid #38bdf8;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+    border-right: 3px solid #38bdf8; /* 右邊游標線 */
+    white-space: nowrap;             /* 不換行 */
+    overflow: hidden;                /* 超出隱藏 */
+    width: 0;                        /* 一開始寬度為0 */
+    animation: typing 3s steps(30, end) forwards, blink 0.8s infinite; /* 打字+閃爍 */
 }
 
 @keyframes typing {
-    to { width: 100%; }
+    to { width: 100%; }              /* 動畫結束顯示全部文字 */
 }
 
 @keyframes blink {
-    50% { border-color: transparent; }
+    50% { border-color: transparent; } /* 游標閃爍 */
 }
 
 /* 技能條 */
 .skill {
-    margin: 10px 0;
-    text-align: left;
+    margin: 10px 0;         /* 上下間距 */
+    text-align: left;       /* 靠左 */
 }
 
 .bar {
-    height: 10px;
-    background: #1e293b;
-    border-radius: 5px;
+    height: 10px;           /* 高度 */
+    background: #1e293b;    /* 背景灰色 */
+    border-radius: 5px;     /* 圓角 */
 }
 
 .fill {
-    height: 10px;
-    background: #38bdf8;
-    border-radius: 5px;
+    height: 10px;           /* 高度 */
+    background: #38bdf8;    /* 藍色填滿 */
+    border-radius: 5px;     /* 圓角 */
 }
 
+/* 整體頁面 */
 body {
-    margin: 0;
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
+    margin: 0;              /* 去掉預設邊距 */
+    font-family: Arial;     /* 字體 */
+    background: #0f172a;    /* 深色背景 */
+    color: white;           /* 文字白色 */
 }
 
 /* 導航列 */
 .navbar {
-    background: #020617;
-    padding: 15px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 30px;
+    background: #020617;    /* 深色背景 */
+    padding: 15px;          /* 內距 */
+    display: flex;          /* 使用 flex 排版 */
+    justify-content: flex-start; /* 靠左 */
+    gap: 30px;              /* 間距30px */
 }
 
 .navbar a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-size: 18px;
+    color: #38bdf8;         /* 藍色連結 */
+    text-decoration: none;  /* 移除底線 */
+    font-size: 18px;        /* 字體大小 */
 }
 
 .navbar a:hover {
-    color: #22c55e;
+    color: #22c55e;         /* 滑鼠移上變綠 */
 }
 
 /* 內容 */
 .container {
-    padding: 40px;
+    padding: 40px;          /* 整體內距 */
 }
+
 .content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  /* 🔥 左右拉開 */
-    gap: 40px;
-    padding: 20px;
-    max-width: 900px;                /* 🔥 控制寬度 */
-    margin: auto;                    /* 🔥 置中整塊 */
+    display: flex;          /* 左右排列 */
+    align-items: center;    /* 垂直置中 */
+    justify-content: space-between; /* 左右分開 */
+    gap: 40px;              /* 間距 */
+    padding: 20px;          /* 內距 */
+    max-width: 900px;       /* 最大寬度 */
+    margin: auto;           /* 置中 */
 }
 
+/* 圖片 */
 .profile-img {
-    width: 400px;               /* 控制圖片大小 */
-    border-radius: 12px;        /* 圓角（可選） */
-    margin-left: -100px;          /* 距離左邊邊界 */
+    width: 400px;           /* 圖片大小 */
+    border-radius: 12px;    /* 圓角 */
+    margin-left: -100px;    /* 往左偏移 */
 }
 
+/* 文字 */
 .text {
-    margin-right: 20px;         /* 距離右邊邊界 */
+    margin-right: 20px;     /* 右邊間距 */
 }
+
+/* 按鈕 */
 .button {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
+    display: inline-block;  /* 可設定尺寸 */
+    padding: 12px 22px;     /* 內距 */
+    background: #38bdf8;    /* 藍色背景 */
+    color: black;           /* 黑字 */
+    border-radius: 10px;    /* 圓角 */
+    text-decoration: none;  /* 無底線 */
+    transition: 0.3s;       /* 動畫 */
 }
 
 .button:hover {
-    background: #0ea5e9;
-    transform: translateY(-2px); /* 🔥 浮起來 */
+    background: #0ea5e9;    /* 深藍 */
+    transform: translateY(-2px); /* 向上浮 */
 }
+
+/* Google 翻譯 */
 #google_translate_element {
-    margin-left: auto;   /* 🔥 推到最右邊 */
+    margin-left: auto;      /* 推到最右 */
 }
 
 .goog-te-combo {
-    padding: 5px;
-    border-radius: 5px;
-    background: #020617;
-    color: white;
-    border: 1px solid #38bdf8;
+    padding: 5px;           /* 內距 */
+    border-radius: 5px;     /* 圓角 */
+    background: #020617;    /* 背景色 */
+    color: white;           /* 字體顏色 */
+    border: 1px solid #38bdf8; /* 邊框 */
 }
+
+/* 移除 Google 上方條 */
 .goog-te-banner-frame.skiptranslate {
-    display: none !important;
+    display: none !important; /* 強制隱藏 */
 }
 
 body {
-    top: 0px !important;
+    top: 0px !important;    /* 防止被往下推 */
 }
+
+.button2 {
+    display: inline-block;  /* 可設定尺寸 */
+    padding: 6px 22px;     /* 內距 */
+    background: #38bdf8;    /* 藍色背景 */
+    color: black;           /* 黑字 */
+    border-radius: 10px;    /* 圓角 */
+    text-decoration: none;  /* 無底線 */
+    transition: 0.3s;       /* 動畫 */
+}
+
+.button:hover {
+    background: #0ea5e9;    /* 深藍 */
+    transform: translateY(-2px); /* 向上浮 */
